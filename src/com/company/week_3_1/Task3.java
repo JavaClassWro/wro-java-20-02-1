@@ -7,10 +7,13 @@ public class Task3 {
     public static void main(String[] args) {
         int memory_number = 987;
         Scanner scanner = new Scanner(System.in);
+        int guessed_number;
+        do {
+            System.out.print("Bet your number: ");
+            guessed_number = scanner.nextInt();
 
-        int guessed_number = scanner.nextInt();
-
-        if (memory_number == guessed_number) System.out.println("Congratulations, you are right!");
-        else System.out.println("Sorry, you are wrong.");
+            if (memory_number == guessed_number) System.out.println("Congratulations, you are right!");
+            else System.out.println("Sorry, you are wrong.");
+        } while(guessed_number != memory_number);
     }
 }
