@@ -1,11 +1,12 @@
 package com.company.week_3_1;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Task3 {
 
     public static void main(String[] args) {
-        int memory_number = 987;
+        int memory_number = new Random().nextInt(10);
         Scanner scanner = new Scanner(System.in);
         int guessed_number;
         do {

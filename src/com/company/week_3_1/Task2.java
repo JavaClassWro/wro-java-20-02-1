@@ -9,30 +9,35 @@ public class Task2 {
         double meterToCentimeter = 100;
 
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("1. EUR to PLN");
-            System.out.println("2. Meters to Centimeters");
-            System.out.println("3. exit");
-            System.out.print("Please choose a convert option:");
-            int option = scanner.nextInt();
-            double value;
-            switch (option) {
-                case 1:
-                    System.out.print("How many EUR: ");
-                    value = scanner.nextDouble();
-                    System.out.println(value + "EUR is equivalent to " + value * eurToPln + "PLN");
-                    return;
-                case 2:
-                    System.out.print("How many meters: ");
-                    value = scanner.nextDouble();
-                    System.out.println(value + "m is equivalent to " + value * meterToCentimeter + "cm");
-                    return;
-                case 3:
-                    System.out.println("Exiting...");
-                    return;
-                default:
-                    System.out.print("No such option, please try again.");
+        System.out.print("Your temperature is ");
+        double temperature = scanner.nextDouble();
+        System.out.println("Do you have a cough?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        boolean cough = scanner.nextInt() == 1;
+        System.out.println("Do you have a chest pain?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        boolean pain = scanner.nextInt() == 1;
+
+        if (temperature < 36.6) {
+            System.out.println("Your temperature is to low, call the ambulance.");
+        } else if (temperature > 36.6 && temperature <= 37.5) {
+            if (cough && pain) {
+                System.out.println("You might have a virus infection, a medical doctor consultation is advised.");
+            } else {
+                System.out.println("Nothing serious so far, but keep the observation.");
             }
+        } else if (temperature > 37.5 && temperature <= 41) {
+            if (cough || pain) {
+                System.out.println("Dangerous situation, contact your doctor.");
+            } else {
+                System.out.println("Situation is not critical, but medical consultation is advised.");
+            }
+        } else if (temperature > 41) {
+            System.out.println("Your temperature is to high, call the ambulance.");
+        } else {
+            System.out.println("You are fine, stay at home.");
         }
     }
 
