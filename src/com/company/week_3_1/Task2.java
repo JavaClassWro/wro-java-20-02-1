@@ -1,44 +1,58 @@
 package com.company.week_3_1;
 
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Task2 {
 
     public static void main(String[] args) {
-        double eurToPln = 4.53;
-        double meterToCentimeter = 100;
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Your temperature is ");
-        double temperature = scanner.nextDouble();
-        System.out.println("Do you have a cough?");
-        System.out.println("1. Yes");
-        System.out.println("2. No");
-        boolean cough = scanner.nextInt() == 1;
-        System.out.println("Do you have a chest pain?");
-        System.out.println("1. Yes");
-        System.out.println("2. No");
-        boolean pain = scanner.nextInt() == 1;
+        System.out.println("Welcome to a calculator. Supported operations:");
 
-        if (temperature < 36.6) {
-            System.out.println("Your temperature is to low, call the ambulance.");
-        } else if (temperature > 36.6 && temperature <= 37.5) {
-            if (cough && pain) {
-                System.out.println("You might have a virus infection, a medical doctor consultation is advised.");
-            } else {
-                System.out.println("Nothing serious so far, but keep the observation.");
+        int operation = 0;
+        while (operation < 1 || operation > 5) {
+            System.out.println("1. plus");
+            System.out.println("2. minus");
+            System.out.println("3. multiply");
+            System.out.println("4. divide");
+            System.out.println("5. quit");
+            System.out.print("Choose an operation:");
+            operation = scanner.nextInt();
+            if (operation < 1 || operation > 5) {
+                System.out.println("No such option, try again.");
             }
-        } else if (temperature > 37.5 && temperature <= 41) {
-            if (cough || pain) {
-                System.out.println("Dangerous situation, contact your doctor.");
-            } else {
-                System.out.println("Situation is not critical, but medical consultation is advised.");
+            if (operation == 5) {
+                System.out.println("Exiting...");
+                return;
             }
-        } else if (temperature > 41) {
-            System.out.println("Your temperature is to high, call the ambulance.");
-        } else {
-            System.out.println("You are fine, stay at home.");
         }
+
+        System.out.print("Left-side value:");
+
+        double left = scanner.nextDouble();
+
+        System.out.print("Right-side value:");
+
+        double right = scanner.nextDouble();
+
+        double result = 0;
+        switch (operation) {
+            case 1:
+                result = left + right;
+                break;
+            case 2:
+                result = left - right;
+                break;
+            case 3:
+                result = left * right;
+                break;
+            case 4:
+                result = left / right;
+                break;
+            default:
+        }
+
+        System.out.println("You answer is "+result);
     }
 
 }

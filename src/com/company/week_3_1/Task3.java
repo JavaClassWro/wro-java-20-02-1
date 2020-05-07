@@ -6,15 +6,12 @@ import java.util.Scanner;
 public class Task3 {
 
     public static void main(String[] args) {
-        int memory_number = new Random().nextInt(10);
-        Scanner scanner = new Scanner(System.in);
-        int guessed_number;
-        do {
-            System.out.print("Bet your number: ");
-            guessed_number = scanner.nextInt();
+        int[] a = new int[]{1, 5, 2, 7, 2, 7, 4};
 
-            if (memory_number == guessed_number) System.out.println("Congratulations, you are right!");
-            else System.out.println("Sorry, you are wrong.");
-        } while(guessed_number != memory_number);
+        int max = a[0];
+        for (int e : a){
+            max = e > max ? e : max;
+        }
+        System.out.println("Max value is "+max);
     }
 }

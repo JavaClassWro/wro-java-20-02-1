@@ -3,22 +3,45 @@ package com.company.week_3_1;
 public class Task1 {
 
     public static void main(String[] args) {
-        int a;
-        int b;
-        System.out.println("a\tb\ta AND b\ta OR b\ta XOR b");
-        a = 1;
-        b = 2;
-        // 'a' is '1' or '01' in binary format
-        // 'b' is '2' or '10' in binary format
-        // 'a&b' is a bitwise AND, hence '01'&'10' is equivalent to '00':
-        //  - first bit of 'a' is '0'; first bit of 'b' is '1'; '0'&'1' gives '0'; hence the first bit of the 'a'&'b' is '0'
-        //  - second bit of 'a' is '1'; second bit of 'b' is '0'; '0'&'1' gives '0'; hence the second bit of the 'a'&'b' is '0'
-        // other operations work in a similar way:
-        //  - 'a'|'b' is a bitwise OR, hence '01'|'10' gives '11', which is 3 in decimal format;
-        //  - 'a'^'b' is a bitwise XOR, hence '01'^'10' gives '11', which is 3 in decimal format.
-        System.out.print(a + "\t" + b +"\t");
-        System.out.print((a&b) + "\t\t" + (a|b) + "\t\t");
-        System.out.println((a^b));
+        byte min_byte = Byte.MIN_VALUE;
+        byte max_byte = Byte.MAX_VALUE;
+
+        System.out.println("A byte has values from "+min_byte+" to "+max_byte);
+
+        short min_short = Short.MIN_VALUE;
+        short max_short = Short.MAX_VALUE;
+
+        System.out.println("A short has values from "+min_short+" to "+max_short);
+
+        char min_char = Character.MIN_VALUE;
+        char max_char = Character.MAX_VALUE;
+
+        // this output will give us symbols, hence it's not really clear what actual values can it hold
+        System.out.println("A char has character values from "+min_char+" to "+max_char);
+
+        // this output will give us the decimal values, or ASCII codes.
+        // When we write '(int)min_char' we convert the character to it's ASCII code, which is decimal.
+        System.out.println("A char has decimal values from "+(int)min_char+" to "+(int)max_char);
+
+        int min_int = Integer.MIN_VALUE;
+        int max_int = Integer.MAX_VALUE;
+
+        System.out.println("An integer has values from "+min_int+" to "+max_int);
+
+        long min_long = Long.MIN_VALUE;
+        long max_long = Long.MAX_VALUE;
+
+        System.out.println("A long has values from "+min_long+" to "+max_long);
+
+        float min_float = Float.MIN_VALUE;
+        float max_float = Float.MAX_VALUE;
+
+        System.out.println("A float has values from "+min_float+" to "+max_float);
+
+        double min_double = Double.MIN_VALUE;
+        double max_double = Double.MAX_VALUE;
+
+        System.out.println("A double has values from "+min_double+" to "+max_double);
     }
 
 }
